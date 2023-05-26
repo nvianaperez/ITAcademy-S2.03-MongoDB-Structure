@@ -1,0 +1,4 @@
+
+db.createCollection( 'Stock', {validator: {$jsonSchema: {bsonType: 'object',description:'Stock of drinks and ingredientes needed to make pizzas and hamburguers',title:'Stock',required: [         'nameProductOrIngredient',          'type(P,H,D)',          'category',          'quantity',          'supplier'],properties: {nameProductOrIngredient: {bsonType: 'string'},type(P,H,D): {enum: },category: {bsonType: 'object',
+title:'object',required: [         'name(Promo,Vegan,Children)'],properties: {name(Promo,Vegan,Children): {enum: }}},quantity: {bsonType: 'double'},supplier: {bsonType: 'array',items: {
+title:'object',required: [         'name',          'mainSupplier'],properties: {name: {bsonType: 'objectId'},mainSupplier: {enum: }}}}}         }      }});  

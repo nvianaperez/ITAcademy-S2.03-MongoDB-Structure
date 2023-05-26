@@ -1,0 +1,2 @@
+
+db.createCollection( 'favouriteSongs', {validator: {$jsonSchema: {bsonType: 'object',title:'favouriteSongs',required: [         'user',          'song'],properties: {user: {bsonType: 'objectId'},song: {bsonType: 'array',items: {bsonType: 'objectId'}}}         }      }});  

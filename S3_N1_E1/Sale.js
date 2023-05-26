@@ -1,0 +1,7 @@
+
+db.createCollection( 'Sale', {validator: {$jsonSchema: {bsonType: 'object',description:'information about Sale, Client and Employee. Info about VAT and Total sale not included',title:'Sale',required: [         'invoiceNumber',          'date',          'client',          'orderLine',          'employee'],properties: {invoiceNumber: {bsonType: 'string'},date: {bsonType: 'timestamp'},client: {bsonType: 'object',
+title:'object',required: [         'name',          'mail',          'createdDate'],properties: {name: {bsonType: 'string'},telephone: {bsonType: 'string'},mail: {bsonType: 'string'},createdDate: {bsonType: 'timestamp'},address: {bsonType: 'object',
+title:'object',required: [         'street',          'city',          'state',          'zipCode'],properties: {street: {bsonType: 'string'},suite: {bsonType: 'string'},city: {bsonType: 'string'},state: {bsonType: 'string'},zipCode: {bsonType: 'string'}}}}},orderLine: {bsonType: 'array',items: {
+title:'object',required: [         'quantity',          'glasses',          'sellPriceLine'],properties: {quantity: {bsonType: 'int'},glasses: {bsonType: 'object',
+title:'object',required: [         'sellPriceGlass',          'graduationLeft',          'graduationRight'],properties: {sellPriceGlass: {bsonType: 'double'},graduationLeft: {bsonType: 'double'},graduationRight: {bsonType: 'double'}}},sellPriceLine: {bsonType: 'double'}}}},employee: {bsonType: 'object',
+title:'object',required: [         'name'],properties: {name: {bsonType: 'string'}}}}         }      }});  

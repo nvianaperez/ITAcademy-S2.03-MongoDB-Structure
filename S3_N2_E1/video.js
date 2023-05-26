@@ -1,0 +1,5 @@
+
+db.createCollection( 'video', {validator: {$jsonSchema: {bsonType: 'object',title:'video',required: [         'title',          'size',          'fileName',          'length',          'thumbnail',          'visibility',          'timeStamp'],properties: {title: {bsonType: 'string'},description: {bsonType: 'string'},size: {bsonType: 'double'},fileName: {bsonType: 'string'},length: {bsonType: 'string'},thumbnail: {bsonType: 'string'},reproductionsNumber: {bsonType: 'int'},visibility: {enum: },timeStamp: {bsonType: 'timestamp'},feedback_video: {bsonType: 'array',items: {
+title:'object',required: [         'like/dislike',          'timeStamp'],properties: {like/dislike: {enum: },timeStamp: {bsonType: 'timestamp'}}}},comments_user_video: {bsonType: 'array',items: {
+title:'object',required: [         'text',          'timeStamp'],properties: {text: {bsonType: 'string'},timeStamp: {bsonType: 'timestamp'},feedbackComment: {bsonType: 'object',
+title:'object',required: [         'like/dislike',          'timeStamp'],properties: {like/dislike: {enum: },timeStamp: {bsonType: 'timestamp'}}}}}},tags: {bsonType: 'array',items: {bsonType: 'string'}}}         }      }});  

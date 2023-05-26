@@ -1,0 +1,13 @@
+
+db.createCollection( 'Shop', {validator: {$jsonSchema: {bsonType: 'object',description:'
+',title:'Shop',required: [         'name',          'address',          'employee',          'client'],properties: {name: {bsonType: 'string'},address: {bsonType: 'object',
+title:'object',required: [         'completeAddress',          'zipCode',          'city',          'region'],properties: {completeAddress: {bsonType: 'string'},zipCode: {bsonType: 'string'},city: {bsonType: 'string'},region: {bsonType: 'object',
+title:'object',required: [         'nameRegion'],properties: {nameRegion: {bsonType: 'string'}}}}},employee: {bsonType: 'array',items: {
+title:'object',required: [         'name',          'lastName',          'NIF',          'phoneNumber',          'type'],properties: {name: {bsonType: 'string'},lastName: {bsonType: 'string'},NIF: {bsonType: 'string'},phoneNumber: {bsonType: 'string'},type: {enum: }}}},client: {bsonType: 'array',items: {
+title:'object',required: [         'name',          'lastName',          'address',          'phoneNumber',          'order'],properties: {name: {bsonType: 'string'},lastName: {bsonType: 'string'},address: {bsonType: 'object',
+title:'object',required: [         'completeAddress',          'zipCode',          'city',          'region'],properties: {completeAddress: {bsonType: 'string'},zipCode: {bsonType: 'string'},city: {bsonType: 'string'},region: {bsonType: 'object',
+title:'object',required: [         'nameRegion'],properties: {nameRegion: {bsonType: 'string'}}}}},phoneNumber: {bsonType: 'string'},order: {bsonType: 'array',items: {
+title:'object',required: [         'invoiceNumber',          'date',          'typeDelivery',          'quantityInShop',          'quantityInHome',          'totalAmount',          'orderLine'],properties: {invoiceNumber: {bsonType: 'string'},date: {bsonType: 'timestamp'},typeDelivery: {enum: },quantityInShop: {bsonType: 'int'},quantityInHome: {bsonType: 'int'},totalAmount: {bsonType: 'double'},orderLine: {bsonType: 'array',items: {
+title:'object',required: [         'product',          'quantityProduct'],properties: {product: {bsonType: 'object',
+title:'object',required: [         'name',          'type(P,H,D)',          'category',          'photo',          'price'],properties: {name: {bsonType: 'string'},type(P,H,D): {enum: },category: {bsonType: 'object',
+title:'object',required: [         'name(Promo,Vegan,Children)'],properties: {name(Promo,Vegan,Children): {enum: }}},description: {bsonType: 'string'},photo: {bsonType: 'string'},price: {bsonType: 'double'}}},quantityProduct: {bsonType: 'int'}}}}}}}}}}}         }      }});  

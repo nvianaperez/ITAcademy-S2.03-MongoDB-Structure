@@ -1,0 +1,7 @@
+
+db.createCollection( 'user', {validator: {$jsonSchema: {bsonType: 'object',title:'user',required: [         'name',          'email',          'password',          'localization',          'category',          'playlists'],properties: {name: {bsonType: 'string'},email: {bsonType: 'string'},password: {bsonType: 'string'},dateOfBirth: {bsonType: 'date'},gender: {enum: },localization: {bsonType: 'object',
+title:'object',required: [         'state',          'zipCode'],properties: {state: {bsonType: 'string'},zipCode: {bsonType: 'string'}}},category: {bsonType: 'object',
+title:'object',required: [         'isSubscriptor',          'timeStamp',          'payments'],properties: {isSubscriptor: {enum: },timeStamp: {bsonType: 'timestamp'},serviceRenewalDate: {bsonType: 'date'},methodPayment_Paypal: {bsonType: 'object',
+title:'object',required: [         'userName'],properties: {userName: {bsonType: 'string'}}},methodPayment_CreditCard: {bsonType: 'object',
+title:'object',required: [         'numberCreditCard',          'expirationDate',          'securityCode'],properties: {numberCreditCard: {bsonType: 'string'},expirationDate: {bsonType: 'date'},securityCode: {bsonType: 'int'}}},payments: {bsonType: 'array',items: {
+title:'object',required: [         '_orderNumber',          'timeStamp',          'totalAmount'],properties: {_orderNumber: {bsonType: 'objectId'},timeStamp: {bsonType: 'timestamp'},totalAmount: {bsonType: 'double'}}}}}},playlists: {bsonType: 'array',items: {bsonType: 'objectId'}}}         }      }});  
